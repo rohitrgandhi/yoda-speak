@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&display=swap');
 
 body{
     font-family: 'Hind Madurai', sans-serif;
@@ -11,7 +11,7 @@ header{
 }
 .h1-header{
     text-align: center;
-    background-color:black;
+    background-image: ;
     color:whitesmoke;
     margin:auto;
     font-size: 1.5rem;
