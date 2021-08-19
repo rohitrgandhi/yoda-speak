@@ -1,18 +1,29 @@
-var button=document.querySelector("#button")
-var input=document.querySelector("#input")
-var output=document.querySelector("#output")
+var button = document.querySelector("#button");
+var inputTxt = document.querySelector("#input");
+var output = document.querySelector("#output");
 
-var inputURL="	https://api.funtranslations.com/translate/yoda.json"
+var inputURL = "https://api.funtranslations.com/translate/yoda.json"
 
-function finalURL(input){
-    return inputURL+"?text="+input;
+function getTranslateURL(text) {
+    return serverURL + "?" + "text=" + text;
 }
-fetch 
-.then (response=> response.json())   
-.then (json=> 
+
+function clickHandler() {
+    var inputText = txtInput.value;
+
+    fetch(getTranslateURL(inputText))
+    .then(response => response.json())
+    .then(json => {
+            var translatedText = json.contents.translated;
+            output.innerText = translatedText;
+        })
+    .catch(handleError)
+    }
+
+    function handleError(error)
     {
-        var inputText=input.value;
+        console.log("error occured",error);
+        alert("Server down! Please try later...");
+    }
 
-
-    } 
-    )  
+    button.addEventListener("click", clickHandler);
